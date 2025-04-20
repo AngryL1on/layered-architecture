@@ -32,7 +32,7 @@ public class InMemoryProductRepository implements ProductRepository {
      *
      * @param id уникальный идентификатор продукта
      * @return {@link Optional} с найденным продуктом, или {@link Optional#empty()},
-     *         если продукт с таким ID отсутствует
+     * если продукт с таким ID отсутствует
      */
     @Override
     public Optional<Product> getProduct(UUID id) {

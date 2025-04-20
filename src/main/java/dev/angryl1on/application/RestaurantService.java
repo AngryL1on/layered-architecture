@@ -18,13 +18,12 @@ public class RestaurantService {
      * Возвращает продукт по ID или бросает исключение, если не найден.
      *
      * @param id идентификатор продукта
-     * @throws IllegalArgumentException если продукт не найден
-     *
      * @return найденный продукт
+     * @throws IllegalArgumentException если продукт не найден
      */
     private Product getProductOrThrow(UUID id) {
         return productRepository.getProduct(id)
-            .orElseThrow(() -> new IllegalArgumentException("Продукт с ID " + id + " не найден"));
+                .orElseThrow(() -> new IllegalArgumentException("Продукт с ID " + id + " не найден"));
     }
 
     /**
@@ -39,10 +38,10 @@ public class RestaurantService {
     /**
      * Добавляет новый продукт с указанными параметрами.
      *
-     * @param name название продукта
+     * @param name           название продукта
      * @param expirationDate дата истечения срока годности
-     * @param unitMeasure единица измерения продукта
-     * @param quantity начальное количество продукта
+     * @param unitMeasure    единица измерения продукта
+     * @param quantity       начальное количество продукта
      */
     public void addProduct(String name, LocalDate expirationDate, String unitMeasure, int quantity) {
         Product product = new Product(UUID.randomUUID(), name, expirationDate, unitMeasure, quantity);
@@ -52,7 +51,7 @@ public class RestaurantService {
     /**
      * Использует (списывает) указанное количество продукта.
      *
-     * @param id идентификатор продукта
+     * @param id       идентификатор продукта
      * @param quantity количество для использования
      */
     public void useProduct(UUID id, int quantity) {
@@ -70,7 +69,7 @@ public class RestaurantService {
     /**
      * Корректирует запас продукта до нового количества.
      *
-     * @param id идентификатор продукта
+     * @param id          идентификатор продукта
      * @param newQuantity новое количество продукта
      */
     public void performInventoryCorrection(UUID id, int newQuantity) {

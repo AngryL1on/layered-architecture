@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class ConsoleApp {
+
     private final RestaurantService restaurantService;
     private final Scanner scanner;
 
@@ -125,6 +126,6 @@ public class ConsoleApp {
 
     private Product getProductOrThrow(UUID id) {
         return restaurantService.getProductById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Продукт с ID " + id + " не найден."));
+                .orElseThrow(() -> new IllegalArgumentException("Продукт с ID " + id + " не найден."));
     }
 }

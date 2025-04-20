@@ -17,11 +17,11 @@ public class Product {
     /**
      * Конструирует новый объект Product.
      *
-     * @param id уникальный идентификатор продукта
-     * @param name название продукта
+     * @param id             уникальный идентификатор продукта
+     * @param name           название продукта
      * @param expirationDate дата истечения срока годности
-     * @param unitMeasure единица измерения (например, кг, шт)
-     * @param quantity количество продукта
+     * @param unitMeasure    единица измерения (например, кг, шт)
+     * @param quantity       количество продукта
      */
     public Product(UUID id, String name, LocalDate expirationDate, String unitMeasure, int quantity) {
         this.id = id;
